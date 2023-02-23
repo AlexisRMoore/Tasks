@@ -1,0 +1,5 @@
+setwd("C:/Users/alexi/OneDrive/Desktop/Evolution/Tasks/Project")
+myData <- read.csv("Leopards.csv")
+myData
+head(myData)
+# Hypothesis Melanism in leopards helps them survive in some environments.

@@ -1,6 +1,6 @@
-for (i in dups_lobster){
-  if (length(dups_lobster[i]) > 1){
-    lob_dups[x] <- i
-    x <- x + 1
+for(x in mutation){
+  if(x<1000){
+    simulate(model)
+    x+1
   }
-}
+} 
