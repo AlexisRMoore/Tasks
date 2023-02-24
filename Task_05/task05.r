@@ -3,4 +3,4 @@ for(x in mutation){
     simulate(model)
     x+1
   }
-} 
+}
