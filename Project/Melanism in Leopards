@@ -1,5 +1,18 @@
+# Hypothesis: Certain types of leopards survive better in certain places.
 setwd("C:/Users/alexi/OneDrive/Desktop/Evolution/Tasks/Project")
-myData <- read.csv("Leopards.csv")
+myData <- read.csv("Leopards 1.csv")
+myData2 <- read.csv("Leopards 2.csv")
+myData3 <- read.csv("Leopards 3.csv")
 myData
 head(myData)
-# Hypothesis Melanism in leopards helps them survive in some environments.
+library(ggplot2)
+library(phytools)
+library(dplyr)
+library(hierfstat)
+library(adegenet)
+mean(myData[,8]) 
+mean(myData[,9])
+mean(myData2[,5])
+mean(myData3[,5])
+summary(myData)
+summary(myData2)
