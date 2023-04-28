@@ -1,0 +1,50 @@
+x<- rnorm(100,mean=0,sd=4)
+var(x)
+mean(x)
+y<-((x*5)+2)+runif(100,0,0.1)
+model <- lm(y ~ x)
+summary(model)
+plot(x,y)
+abline(lm(y~x),col='red')
+coef(lm(y~x))
+# The y-intercept is 2.050427, while the x-intercept is 5.000616
+z<-c()
+x<-rnorm(100,mean=5,sd=4)
+for(i in 1:100){
+ z[i]<-runif(1)
+   y<-(x*z[i])+2+(rnorm(100,0:0.1))
+      l<-coef(lm(z[1:100]~y))
+}
+plot(z[1:100],y)              
+abline(lm(y~z[1:100]))
+coef(lm(y~z))
+plot(c(z,1.8746132))
+library(ggplot2)
+# EC Monty Hall
+times<-10000
+doors<-c('car', 'money', 'cruise')
+monty_hall<-function(iteration) {
+  contestant_door<-sample(doors,size=iteration, replace=TRUE)
+  i=1:iteration
+  stick_win<-ifelse(contestant_door=='car', 1,0)
+  switch_win<-ifelse(contestant_door=='car', 0,1)
+  stick_prob<-cumsum(stick_win)/i
+  switch_prob<-cumsum(switch_win)/i
+  results<- data.frame(i=i, contestant_door=contestant_door, stick_win=stick_win, switch_win=switch_win, stick_prob=stick_prob, switch_prob=switch_prob)
+    return(results)
+    }
+results<-monty_hall(times)
+summary<-table(results$contestant_door)
+df_summary<-data.frame(label=names(summary), count=matrix(summary))
+print(df_summary)
+barplot(c(sum(as.numeric(results$stick_win)),sum(as.numeric(results$switch_win))),beside=TRUE,xlab='switch', ylab='stick')
+install.packages('meme')
+install.packages('memer')
+install.packages('memery')
+install.packages("jpeg")
+library(meme)
+library(memer)
+library(memery)
+library(jpeg)
+?readJPEG
+pic<-system.file("Heart.jpg", package='meme')
